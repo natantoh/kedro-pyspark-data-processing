@@ -1,0 +1,10 @@
+ipython>=8.10
+jupyterlab>=3.0
+kedro-datasets[pandas-csvdataset, pandas-exceldataset, pandas-parquetdataset, spark-sparkdataset, plotly-plotlydataset, plotly-jsondataset, matplotlib-matplotlibwriter]>=3.0
+kedro-viz>=6.7.0
+kedro[jupyter]~=0.19.12
+seaborn~=0.12.1
+setuptools; python_version >= "3.12"
+delta-spark==2.4.0
+kedro==0.19.12
+pyspark==3.4.4

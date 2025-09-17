@@ -1,0 +1,33 @@
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">=3.9"
+name = "pyspark_data_processing"
+readme = "README.md"
+dynamic = [ "version",]
+dependencies = [ "ipython>=8.10", "jupyterlab>=3.0", "notebook", "kedro[jupyter]~=0.19.12", "kedro-datasets[pandas-csvdataset, pandas-exceldataset, pandas-parquetdataset, spark-sparkdataset, plotly-plotlydataset, plotly-jsondataset, matplotlib-matplotlibwriter]>=3.0", "kedro-viz>=6.7.0", "seaborn~=0.12.1", "setuptools; python_version >= '3.12'",]
+
+[project.scripts]
+kedro-pyspark-data-processing = "pyspark_data_processing.__main__:main"
+
+[tool.kedro]
+package_name = "pyspark_data_processing"
+project_name = "kedro-pyspark-data-processing"
+kedro_init_version = "0.19.12"
+tools = "['PySpark']"
+example_pipeline = "True"
+source_dir = "src"
+
+[project.entry-points."kedro.hooks"]
+
+[tool.setuptools.dynamic.version]
+attr = "pyspark_data_processing.__version__"
+
+[tool.setuptools.packages.find]
+where = [ "src",]
+namespaces = false
+
+[tool.kedro_telemetry]
+project_id = "a9588a7529264b9885fe98f698c63f12"
